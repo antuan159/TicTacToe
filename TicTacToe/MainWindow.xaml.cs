@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using System.Windows.Controls;
 
 namespace TicTacToe
 {
@@ -10,214 +11,117 @@ namespace TicTacToe
         public MainWindow()
         {
             InitializeComponent();
-            
         }
 
-        private void buttonNewGame_Click(object sender, RoutedEventArgs e)
+        private void BntNewGame_Click(object sender, RoutedEventArgs e)
         {
             ClearFild();
         }
-
-        public string xAndO { get; set; }
-        public int counter { get; set; } 
-
-        private void button1_Click(object sender, RoutedEventArgs e)
+        public string XandO { get; set; }
+        public int Counter { get; set; }
+        private void BtnClick(object sender, RoutedEventArgs e)
         {
-            if (button1.Content == "")
+            Button btn = sender as Button;
+
+            if (btn != null && string.IsNullOrEmpty(btn.Content as string))
             {
-                NewSymbol();
-                button1.Content = xAndO;
-                WinOrFalse();
+                btn.Content = XandO;
+                if (!IsWin())
+                {
+                    NewSymbol();
+                }
             }
         }
-
-        private void button2_Click(object sender, RoutedEventArgs e)
-        {
-            if (button2.Content == "")
-            {
-                NewSymbol();
-                button2.Content = xAndO;
-                WinOrFalse();
-            }
-        }
-
-        private void button3_Click(object sender, RoutedEventArgs e)
-        {
-            if (button3.Content == "")
-            {
-                NewSymbol();
-                button3.Content = xAndO;
-                WinOrFalse();
-            }
-        }
-
-        private void button4_Click(object sender, RoutedEventArgs e)
-        {
-            if (button4.Content == "")
-            {
-                NewSymbol();
-                button4.Content = xAndO;
-                WinOrFalse();
-            }
-        }
-
-        private void button5_Click(object sender, RoutedEventArgs e)
-        {
-            if (button5.Content == "")
-            {
-                NewSymbol();
-                button5.Content = xAndO;
-                WinOrFalse();
-            }
-        }
-
-        private void button6_Click(object sender, RoutedEventArgs e)
-        {
-            if (button6.Content == "")
-            {
-                NewSymbol();
-                button6.Content = xAndO;
-                WinOrFalse();
-            }
-        }
-
-        private void button7_Click(object sender, RoutedEventArgs e)
-        {
-            if (button7.Content == "")
-            {
-                NewSymbol();
-                button7.Content = xAndO;
-                WinOrFalse();
-            }
-        }
-
-        private void button8_Click(object sender, RoutedEventArgs e)
-        {
-            if (button8.Content == "")
-            {
-                NewSymbol();
-                button8.Content = xAndO;
-                WinOrFalse();
-            }
-        }
-
-        private void button9_Click(object sender, RoutedEventArgs e)
-        {
-            if (button9.Content == "")
-            {
-                NewSymbol();
-                button9.Content = xAndO;
-                WinOrFalse();
-            }
-        }
-
         public void NewSymbol()
         {
-            if (string.IsNullOrEmpty(xAndO))
+            if (XandO == "X")
             {
-                
-                xAndO = "X";
+                XandO = "O";
                 label.Content = "Ходит O";
-                return;
-            }
-            if (xAndO == "O")
-            {
-                
-                xAndO = "X";
-                label.Content = "Ходит O";
-                return;
             }
             else
             {
+                XandO = "X";
                 label.Content = "Ходит X";
-                xAndO = "O";
-                return;
             }
         }// изменение Х или О
         private void ClearFild()
         {
-            counter = 0;
-            xAndO = "";
-            button1.Content = "";
-            button2.Content = "";
-            button3.Content = "";
-            button4.Content = "";
-            button5.Content = "";
-            button6.Content = "";
-            button7.Content = "";
-            button8.Content = "";
-            button9.Content = "";
+            Counter = 0;
+            XandO = "X";
+            BtnLeftTop.Content = null;
+            BtnMiddleTop.Content = null;
+            BtnRightTop.Content = null;
+            BtnMiddleleft.Content = null;
+            BtnMiddle.Content = null;
+            BtnMiddleRight.Content = null;
+            BtnBottomLeft.Content = null;
+            BtnBottomMiddle.Content = null;
+            BtnBottomRight.Content = null;
             label.Content = "Ходит X";
         }// очистка поля начало новой игры
         private void Win(bool b)
         {
-            if (counter == 9&&b)
+            if (Counter == 9 && b)
             {
                 MessageBox.Show($"Игра закончилась в ничью!!");
                 ClearFild();
                 return;
             }
-            MessageBox.Show($"поздравляем победитель  {xAndO}");
+            MessageBox.Show($"поздравляем победитель  {XandO}");
             ClearFild();
         }//вывод в лейбу победителя
-        private void WinOrFalse()
+        private bool IsWin()
         {
-            bool win = false;
-            counter++;
-            if (button1.Content == button2.Content && button1.Content == button3.Content)//1 line
+            Counter++;
+            if (AreEquals(BtnLeftTop.Content, BtnMiddleTop.Content, BtnRightTop.Content) ||
+               AreEquals(BtnMiddleleft.Content, BtnMiddle.Content, BtnMiddleRight.Content) ||
+               AreEquals(BtnBottomLeft.Content, BtnBottomMiddle.Content, BtnBottomRight.Content) ||
+               AreEquals(BtnLeftTop.Content, BtnMiddleleft.Content, BtnBottomLeft.Content) ||
+               AreEquals(BtnMiddleTop.Content, BtnMiddle.Content, BtnBottomMiddle.Content) ||
+               AreEquals(BtnRightTop.Content, BtnMiddleRight.Content, BtnBottomRight.Content) ||
+               AreEquals(BtnLeftTop.Content, BtnMiddle.Content, BtnBottomRight.Content) ||
+               AreEquals(BtnRightTop.Content, BtnMiddle.Content, BtnBottomLeft.Content))
             {
-                if(button1.Content=="")
-                    return;
-                Win(win);
+                Win(false);
+                return true;
             }
-            if (button4.Content == button5.Content && button4.Content == button6.Content)// 2 line
+            if (Counter == 9)
             {
-                if (button4.Content == "")
-                    return;
-                Win(win);
+                Win(true);
+                return true;
             }
-            if (button7.Content == button8.Content && button7.Content == button9.Content)//3 line
-            {
-                if (button7.Content == "")
-                    return;
-                Win(win);
-            }
-            if (button1.Content == button4.Content && button1.Content == button7.Content)//4 line
-            {
-                if (button1.Content == "")
-                    return;
-                Win(win);
-            }
-            if (button2.Content == button5.Content && button2.Content == button8.Content)//5 line
-            {
-                if (button2.Content == "")
-                    return;
-                Win(win);
-            }
-            if (button3.Content == button6.Content && button3.Content == button9.Content)//5 line
-            {
-                if (button3.Content == "")
-                    return;
-                Win(win);
-            }
-            if (button1.Content == button5.Content && button1.Content == button9.Content)//7 line
-            {
-                if (button1.Content == "")
-                    return;
-                Win(win);
-            }
-            if (button3.Content == button5.Content && button3.Content == button7.Content)//8 line
-            {
-                if (button3.Content == "")
-                    return;
-                Win(win);
-            }
-            
-            if (counter == 9)
-            {
-                win = true;
-                Win(win);
-            }
+            return false;
         }// проверки на выигрыш по линиям
+        public bool AreEquals<T>(params T[] objects)
+        {
+            if (objects.Length == 1)
+            {
+                return objects[0] != null;
+            }
+
+            if (objects.Length == 2)
+            {
+                return objects[0] != null && objects[1] != null &&
+                    objects[0].Equals(objects[1]);
+            }
+
+            var first = objects[0];
+
+            if (first == null)
+            {
+                return false;
+            }
+
+            for (int i = 1; i < objects.Length; i++)
+            {
+                if (objects[i] == null || !first.Equals(objects[i]))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
     }
 }

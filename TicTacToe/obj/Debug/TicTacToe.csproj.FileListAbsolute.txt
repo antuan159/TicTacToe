@@ -1,10 +1,11 @@
-G:\Проэкты_Git\TicTacToe\TicTacToe\bin\Debug\TicTacToe.exe.config
-G:\Проэкты_Git\TicTacToe\TicTacToe\bin\Debug\TicTacToe.exe
-G:\Проэкты_Git\TicTacToe\TicTacToe\bin\Debug\TicTacToe.pdb
 G:\Проэкты_Git\TicTacToe\TicTacToe\obj\Debug\MainWindow.g.cs
 G:\Проэкты_Git\TicTacToe\TicTacToe\obj\Debug\App.g.cs
 G:\Проэкты_Git\TicTacToe\TicTacToe\obj\Debug\TicTacToe_MarkupCompile.cache
 G:\Проэкты_Git\TicTacToe\TicTacToe\obj\Debug\TicTacToe_MarkupCompile.lref
+G:\Проэкты_Git\TicTacToe\TicTacToe\obj\Debug\TicTacToe.csprojAssemblyReference.cache
+G:\Проэкты_Git\TicTacToe\TicTacToe\bin\Debug\TicTacToe.exe.config
+G:\Проэкты_Git\TicTacToe\TicTacToe\bin\Debug\TicTacToe.exe
+G:\Проэкты_Git\TicTacToe\TicTacToe\bin\Debug\TicTacToe.pdb
 G:\Проэкты_Git\TicTacToe\TicTacToe\obj\Debug\MainWindow.baml
 G:\Проэкты_Git\TicTacToe\TicTacToe\obj\Debug\TicTacToe.g.resources
 G:\Проэкты_Git\TicTacToe\TicTacToe\obj\Debug\TicTacToe.Properties.Resources.resources
@@ -12,4 +13,3 @@ G:\Проэкты_Git\TicTacToe\TicTacToe\obj\Debug\TicTacToe.csproj.GenerateRes
 G:\Проэкты_Git\TicTacToe\TicTacToe\obj\Debug\TicTacToe.csproj.CoreCompileInputs.cache
 G:\Проэкты_Git\TicTacToe\TicTacToe\obj\Debug\TicTacToe.exe
 G:\Проэкты_Git\TicTacToe\TicTacToe\obj\Debug\TicTacToe.pdb
-G:\Проэкты_Git\TicTacToe\TicTacToe\obj\Debug\TicTacToe.csprojAssemblyReference.cache
