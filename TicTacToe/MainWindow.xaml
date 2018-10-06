@@ -22,7 +22,7 @@
             <Button x:Name="button8" Content="." HorizontalAlignment="Left" Margin="3,220,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="button8_Click" Grid.Column="1"/>
             <Button x:Name="button9" Content="." HorizontalAlignment="Left" Margin="108,220,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="button9_Click" Grid.Column="1"/>
         </Grid>
-        <Button x:Name="buttonNewGame" Content="New Game" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="98" Height="26" Click="buttonNewGame_Click" FontSize="14" Background="#FFC96B6B" TextOptions.TextHintingMode="Fixed"/>
+        <Button x:Name="buttonNewGame" Content="New Game" HorizontalAlignment="Left" Margin="105,10,0,0" VerticalAlignment="Top" Width="100" Height="26" Click="buttonNewGame_Click" FontSize="14" Background="#FFC96B6B" TextOptions.TextHintingMode="Fixed"/>
         <Label x:Name="label" Content="Нажмите кнопку New Game" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Width="305"/>
 
     </Grid>
