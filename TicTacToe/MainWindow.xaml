@@ -5,21 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TicTacToe"
         mc:Ignorable="d"
-        Title="MainWindow" Height="430" Width="345">
+        Title="Крестики Нолики" Height="430" Width="345">
     <Grid Margin="10,0,2,3">
         <Grid HorizontalAlignment="Left" Height="330" Margin="-10,66,0,0" VerticalAlignment="Top" Width="330" RenderTransformOrigin="0.492,0.499">
-            <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
-            <Button x:Name="button_Copy" Content="Button" HorizontalAlignment="Left" Margin="115,10,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
-            <Button x:Name="button_Copy1" Content="Button" HorizontalAlignment="Left" Margin="220,10,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
-            <Button x:Name="button_Copy2" Content="Button" HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
-            <Button x:Name="button_Copy3" Content="Button" HorizontalAlignment="Left" Margin="115,115,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
-            <Button x:Name="button_Copy4" Content="Button" HorizontalAlignment="Left" Margin="220,115,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
-            <Button x:Name="button_Copy5" Content="Button" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
-            <Button x:Name="button_Copy6" Content="Button" HorizontalAlignment="Left" Margin="115,220,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
-            <Button x:Name="button_Copy7" Content="Button" HorizontalAlignment="Left" Margin="220,220,0,0" VerticalAlignment="Top" Width="100" Height="100"/>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="56*"/>
+                <ColumnDefinition Width="109*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="button1" Content="." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="button1_Click"/>
+            <Button x:Name="button2" Content="." HorizontalAlignment="Left" Margin="3,10,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="button2_Click" Grid.Column="1"/>
+            <Button x:Name="button3" Content="." HorizontalAlignment="Left" Margin="108,10,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="button3_Click" Grid.Column="1"/>
+            <Button x:Name="button4" Content="." HorizontalAlignment="Left" Margin="10,115,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="button4_Click"/>
+            <Button x:Name="button5" Content="." HorizontalAlignment="Left" Margin="3,115,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="button5_Click" Grid.Column="1"/>
+            <Button x:Name="button6" Content="." HorizontalAlignment="Left" Margin="108,115,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="button6_Click" Grid.Column="1"/>
+            <Button x:Name="button7" Content="." HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="button7_Click"/>
+            <Button x:Name="button8" Content="." HorizontalAlignment="Left" Margin="3,220,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="button8_Click" Grid.Column="1"/>
+            <Button x:Name="button9" Content="." HorizontalAlignment="Left" Margin="108,220,0,0" VerticalAlignment="Top" Width="100" Height="100" Click="button9_Click" Grid.Column="1"/>
         </Grid>
-        <Button x:Name="button1" Content="New Game" HorizontalAlignment="Left" Margin="106,10,0,0" VerticalAlignment="Top" Width="98" Height="26"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Width="305"/>
+        <Button x:Name="buttonNewGame" Content="New Game" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="98" Height="26" Click="buttonNewGame_Click" FontSize="14" Background="#FFC96B6B" TextOptions.TextHintingMode="Fixed"/>
+        <Label x:Name="label" Content="Нажмите кнопку New Game" HorizontalAlignment="Left" Margin="10,46,0,0" VerticalAlignment="Top" Width="305"/>
 
     </Grid>
 </Window>
